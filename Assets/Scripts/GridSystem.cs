@@ -4,10 +4,12 @@ using System.Collections.Generic;
 
 public class GridSystem : MonoBehaviour
 {
-    [Range(4, 10)]
-    public int gridWidth;
-    [Range(4, 10)]
-    public int gridHeight;
+    // Allow the grid to be configured from 3x3 up to 10x10.  Provide sensible
+    // defaults so a newly added component doesn't end up with a 0x0 board.
+    [Range(3, 10)]
+    public int gridWidth = 4;
+    [Range(3, 10)]
+    public int gridHeight = 4;
 
     private int[,] grid;
 
